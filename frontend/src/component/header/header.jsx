@@ -1,3 +1,10 @@
 import React, {Component} from "react";
 import './header.scss';
-import message from '../message/message'
+
+
+const header = () => {
+    <div className="header">
+        <h2>Go and react chat app</h2>
+
+    </div>
+}
