@@ -1,2 +1,2 @@
-import header from './header.jsx';
+import header from './header.js';
 export default header; 

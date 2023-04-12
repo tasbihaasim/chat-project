@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import Header from './component/header/header';
+import header from './component/header/header';
 import chathistory from './component/chathistory/chathistory';
 import chatinput from './component/chatinput/chatinput';
 import './App.css';
@@ -28,7 +28,7 @@ class App extends Component{
         render(){
             return (
                 <div className="App">
-                    <Header/>
+                    <header/>
                     <chathistory chathistory={this.state.chathistory}/>
                     <chatinput send ={this.send}/>
                 </div>

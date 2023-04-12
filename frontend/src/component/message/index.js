@@ -1,2 +1,3 @@
-import message from './message.jsx';
+import message from './message.js';
 export default message; 
+

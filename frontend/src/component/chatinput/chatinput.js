@@ -1,6 +1,5 @@
 import React, {Component} from "react";
-import './chatinput.scss';
-import message from '../message/message'
+import './chatinput.css';
 
 class chatinput extends Component {
     render () {
@@ -13,3 +12,5 @@ class chatinput extends Component {
     }
 
 }
+
+export default chatinput;
