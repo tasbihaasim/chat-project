@@ -5,7 +5,6 @@ import (
 	"net/http"
 
 	"github.com/gorilla/websocket"
-	"github.com/tasbihaasim/golang-chat/pkg/websocket"
 )
 
 func serveWS(pool *Pool, w http.ResponseWriter, r *http.Request) {

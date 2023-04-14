@@ -1,6 +1,10 @@
+package websocket
+
 import (
-	"github.com/gorilla/websocket"
+	"log"
 	"sync"
+
+	"github.com/gorilla/websocket"
 )
 
 type Client struct {
@@ -29,5 +33,4 @@ func (c *Client) Read() {
 		message := Message{Type: messageType, Body: string(p)}
 		c.Pool.Broadcast <- message
 	}
-
 }
