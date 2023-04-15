@@ -1,2 +1,2 @@
-import chatinput from './chatinput.js';
-export default chatinput; 
+import ChatInput from './ChatInput.js';
+export default ChatInput; 

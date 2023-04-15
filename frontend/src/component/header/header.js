@@ -1,10 +1,10 @@
 import React from "react";
-import './header.css';
+import './Header.css';
 
 
-const header = () => {
+const Header = () => {
     return (
-        <div className="header">
+        <div className="Header">
         <h2>Go and react chat app</h2>
 
     </div>
@@ -12,4 +12,4 @@ const header = () => {
     );
 }
 
-export default header; 
+export default Header; 

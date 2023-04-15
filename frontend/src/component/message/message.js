@@ -1,12 +1,11 @@
 import React, {Component} from "react";
-import './message.css';
+import './Message.css';
 
-class message extends Component {
+class Message extends Component {
     constructor(props) {
         super(props);
-        let tmp = JSON.parse(this.parse.message);
         this.state={
-            message: tmp
+            message: this.props.message
         }
     }
     render(){
@@ -19,4 +18,4 @@ class message extends Component {
     };
 }
 
-export default message;
+export default Message;

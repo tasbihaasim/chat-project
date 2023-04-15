@@ -4,17 +4,17 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/gorilla/websocket"
+	"github.com/tasbihaasim/golang-chat/pkg/websocket"
 )
 
-func serveWS(pool *Pool, w http.ResponseWriter, r *http.Request) {
+func serveWS(pool *websocket.Pool, w http.ResponseWriter, r *http.Request) {
 	fmt.Println("websocket endpoint reached")
-	conn, err := websocket.Upgrade(w, r, nil, 1024, 1024)
+	conn, err := websocket.Upgrade(w, r)
 
 	if err != nil {
 		fmt.Fprintf(w, "%+V\n", err)
 	}
-	client := &Client{
+	client := &websocket.Client{
 		Conn: conn,
 		Pool: pool,
 	}
@@ -23,7 +23,7 @@ func serveWS(pool *Pool, w http.ResponseWriter, r *http.Request) {
 }
 
 func setupRoutes() {
-	pool := NewPool()
+	pool := websocket.NewPool()
 	go pool.Start()
 	http.HandleFunc("/ws", func(w http.ResponseWriter, r *http.Request) {
 		serveWS(pool, w, r)
@@ -31,7 +31,7 @@ func setupRoutes() {
 }
 
 func main() {
-	fmt.Println("Full Stack Chat Project")
+	fmt.Println("Tasbiha's Full Stack Chat Project")
 	setupRoutes()
 	fmt.Println("Server started listening on port 9000")
 	err := http.ListenAndServe(":9000", nil)

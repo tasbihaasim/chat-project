@@ -1,7 +1,7 @@
 import React, {Component} from "react";
-import header from './component/header/header';
-import chathistory from './component/chathistory/chathistory';
-import chatinput from './component/chatinput/chatinput';
+import Header from './component/Header/Header';
+import ChatHistory from './component/ChatHistory/ChatHistory';
+import ChatInput from './component/ChatInput/ChatInput';
 import './App.css';
 import {connect, sendMsg} from './api';
 
@@ -9,14 +9,14 @@ class App extends Component{
     constructor(props){
         super(props);
         this.state = {
-            chathistory: []
+            ChatHistory: []
         }
     }
     componentDidMount(){
         connect((msg)=>{
             console.log("new message")
             this.setState(prevState => ({
-                chathistory : [...prevState.chathistory, msg]
+                ChatHistory : [...prevState.ChatHistory, msg]
 
             } ))
             console.log(this.state);
@@ -25,12 +25,20 @@ class App extends Component{
         
         );
     }
+    send(event) {
+        if (event.keyCode === 13) {
+          sendMsg(event.target.value);
+          event.target.value = "";
+        }
+      }
+
+
         render(){
             return (
                 <div className="App">
-                    <header/>
-                    <chathistory chathistory={this.state.chathistory}/>
-                    <chatinput send ={this.send}/>
+                    <Header/>
+                    <ChatHistory ChatHistory={this.state.ChatHistory}/>
+                    <ChatInput send ={this.send}/>
                 </div>
 
             );
