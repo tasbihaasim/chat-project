@@ -1,16 +1,8 @@
-.Message {
-    display: block;
-    background-color: #B2B1B9;
-    margin: 10px auto;
-    box-shadow: 0 5px 15px -5px rgba(0,0,0,.2);
-    padding: 10px 20px;
-    border-radius: 5px;
-    clear:both;
-  }
-  
-  .Message.me {
-    color: rgb(31, 28, 70);
-    float: right;
-  }
-
-  
+.message {
+  background-color: #f2f2f2;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+  max-width: 80%;
+  word-wrap: break-word;
+}
