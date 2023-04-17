@@ -7,6 +7,7 @@ let connect = (cb) => {
     }
     socket.onmessage = (msg) => {
         console.log("message from websocket: ", msg);
+        cb(msg);
     }
     socket.onclose = (event) => {
         console.log("socket closed sonnection: ", event)

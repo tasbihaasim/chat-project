@@ -1,10 +1,10 @@
-.ChatHistory {
+.History {
     background-color: #2C2E43;
     margin: 0;
     padding: 20px;
   }
   
-  .ChatHistory h2 {
+  .History h2 {
     margin: 0;
     padding: 0;
     color: white;
