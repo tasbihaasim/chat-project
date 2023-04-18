@@ -2,6 +2,8 @@ import React, {Component} from "react";
 import Header from './component/Header/Header';
 import History from './component/History/History';
 import ChatInput from './component/ChatInput/ChatInput';
+import Login from "./component/Login/Login";
+import { BrowserRouter, Route, Routes} from "react-router-dom";
 import './App.css';
 import {connect, sendMsg} from './api';
 
@@ -26,6 +28,9 @@ class App extends Component{
         
         );
     }
+    handleLogin = (email, password) => {
+        console.log(`Email: ${email}, Password: ${password}`)
+      }
     send(event) {
         if (event.keyCode === 13) {
           sendMsg(event.target.value);
@@ -36,12 +41,26 @@ class App extends Component{
 
         render(){
             return (
-                <div className="App">
-                    <Header/>
-                    <History history={this.state.history}/>
-                    <ChatInput send ={this.send}/>
+            <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<div className="App">
+                <Header/>
+                <History history={this.state.history}/>
+                <ChatInput send ={this.send}/>
                 </div>
+                }
+                />
+                <Route path="/login" element={
+                    <Login handleLogin={this.handleLogin} />
+                }
+                />
+            </Routes>
+                
+            </BrowserRouter>
 
+            
+            
+            
             );
         }
     }
