@@ -4,16 +4,18 @@ import './Message.css';
 class Message extends Component {
     constructor(props) {
         super(props);
+        let temp = JSON.parse(this.props.message);
+        console.log("message prop:", temp);
         this.state={
-            message: this.props.message
+            message: temp
         }
     }
     render(){
+        console.log("This state's message body is:", this.props.message.body);
         return(
             <div className="message">
-                {this.state.message.body}
+                <p style={{ color: "black" }}>{this.state.message.body}</p>
             </div>
-
         );
     };
 }
