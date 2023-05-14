@@ -1,7 +1,7 @@
 # This is a comment
 
 # application is mandatory
-runtime: go113
+runtime: go11
 api_version: go1
 env: standard
 handlers:
