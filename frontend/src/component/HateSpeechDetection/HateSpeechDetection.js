@@ -1,7 +1,7 @@
 import sentiment from 'sentiment';
-
 let isHurtful = false;
 const detectHateSpeech = (text) => {
+  
   console.log("Input Text:", text);
     var Sentiment = require('sentiment');
     var sentiment = new Sentiment();
@@ -9,6 +9,9 @@ const detectHateSpeech = (text) => {
 
     if (result.score < 0) {
         isHurtful = true;
+    }
+    else{
+      isHurtful = false;
     }
     
   console.log("Sentiment Analysis Result:", result);

@@ -3,8 +3,6 @@ import Header from './component/Header/Header';
 import History from './component/History/History';
 import ChatInput from './component/ChatInput/ChatInput';
 import {isHurtful, detectHateSpeech} from "./component/HateSpeechDetection/HateSpeechDetection";
-import Login from "./Login";
-import { BrowserRouter, Route, Routes} from "react-router-dom";
 import './App.css';
 import {connect, sendMsg} from './api';
 
@@ -44,6 +42,7 @@ class App extends Component{
             sendMsg(event.target.value);
             if (isHurtful){
                 sendMsg("BOT: Hate Speech Detected! Do not be rude.");
+                
             }
           
           // add hate speech detection here
@@ -52,34 +51,19 @@ class App extends Component{
       }
         render(){
             return (
-            <BrowserRouter>
-            <Routes>
-                <Route path="/" element={<div className="App">
-                <Header/>
-                    <div className="chat-container">
-                        
-                        <div className="chat-history">
-                            <History username = {this.state.username} history={this.state.history}/>
-                        </div>
-                        <div className="chat-input">
-                            <ChatInput send={this.send} />
-                        </div>    
+                <div>
+                  <Header />
+                  <div className="chat-container">
+                    <div className="chat-history">
+                      <History username={this.state.username} history={this.state.history} />
                     </div>
+                    <div className="chat-input">
+                      <ChatInput send={this.send} />
+                    </div>
+                  </div>
                 </div>
-                }
-                />
-                <Route path="/login" element={
-                    <Login />
-                }
-                />
-            </Routes>
-                
-            </BrowserRouter>
-
-            
-            
-            
-            );
+              );
+              
         }
     }
 
