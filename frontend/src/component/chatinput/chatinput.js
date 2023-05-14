@@ -5,7 +5,7 @@ class ChatInput extends Component {
     render () {
         return (
             <div className="ChatInput">
-                <input onKeyDown={this.props.send} placeholder="type a message .. hit enter to send"/>
+                <input onKeyDown={this.props.send} placeholder="Press Enter to send your message"/>
             </div>
 
         )

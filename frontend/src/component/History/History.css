@@ -1,6 +1,6 @@
 .history {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  margin-top: 20px;
+  align-items: right;
+  margin-top: 2px;
 }

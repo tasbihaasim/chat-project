@@ -23,7 +23,7 @@ func serveWS(pool *websocket.Pool, w http.ResponseWriter, r *http.Request) {
 }
 
 func setupRoutes() {
-	pool := websocket.NewPool()
+	pool := websocket.CreatePool()
 	go pool.Start()
 	http.HandleFunc("/ws", func(w http.ResponseWriter, r *http.Request) {
 		serveWS(pool, w, r)
@@ -31,7 +31,7 @@ func setupRoutes() {
 }
 
 func main() {
-	fmt.Println("Tasbiha's Full Stack Chat Project")
+	fmt.Println("Starting...")
 	setupRoutes()
 	fmt.Println("Server started listening on port 9000")
 	err := http.ListenAndServe(":9000", nil)
