@@ -12,13 +12,18 @@ The application uses Hate Speech Detection which allows us to detect and filter 
 
 GroupTherapy+ is deployed via Docker. Use the following commands to get started:
 
-1. Run Docker commands:
+### 1. Set up backend server:
 
-   'docker pull tasbiha/golangchat'
+Pull docker image
+```
+docker pull tasbiha/golangchat
+```
+Run docker image
+```
+docker run -p 9000:9000 tasbiha/golangchat
+```
 
-   'docker run -p 9000:9000 tasbiha/golangchat'
-
-2. Access the frontend at:
+### 2. Access the frontend at:
 https://tasbihaasim.github.io/chat-project/
 
 
