@@ -14,9 +14,9 @@ GroupTherapy+ is deployed via Docker. Use the following commands to get started:
 
 1. Run Docker commands:
 
-   docker pull tasbiha/golangchat
+   'docker pull tasbiha/golangchat'
 
-   docker run -p 9000:9000 tasbiha/golangchat
+   'docker run -p 9000:9000 tasbiha/golangchat'
 
 2. Access the frontend at:
 https://tasbihaasim.github.io/chat-project/
